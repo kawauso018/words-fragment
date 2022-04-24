@@ -17,6 +17,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    //Navigationを使う上で必要
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -24,7 +26,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.example.wordsapp"
+        applicationId "com.example.wordsfragmentapp"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -59,4 +61,10 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "com.google.android.material:material:$material_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //Navigationを使うために以下を依存関係グループに追加
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    //テスト用（よくわからないため省略しました）
+
 }
